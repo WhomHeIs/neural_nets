@@ -18,7 +18,7 @@ from keras.models import Sequential  # Used to initialize our network
 from keras.layers import Dense # Used to create layers in our NN
 
 
-dataset = pd.read_csv(r'C:\eclipse-workspace\DeepLearningAndNN\data\Churn_Modelling.csv')
+dataset = pd.read_csv(r'Churn_Modelling.csv')
 X = dataset.iloc[:, 3:13].values
 y = dataset.iloc[:, 13].values
 

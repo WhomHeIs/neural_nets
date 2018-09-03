@@ -10,7 +10,7 @@ import pandas as pd
 
 # Importing the dataset
 dataset = pd.read_csv(
-    r'C:\eclipse-workspace\DeepLearningAndNN\data\Churn_Modelling.csv')
+    r'Churn_Modelling.csv')
 X = dataset.iloc[:, 3:13].values
 y = dataset.iloc[:, 13].values
 
@@ -109,7 +109,18 @@ def show_history(history):
     else:
         print("No history to show")
 
-show_history(my_history)
+def plot_train_acc_loss(history):
+    if(history):
+        plt.plot(history.history['acc'])
+        plt.plot(history.history['loss'])
+        plt.title('accuracy/loss ratio')
+        plt.ylabel('accuracy/loss')
+        plt.xlabel('epoch')
+        plt.legend(['acc', 'loss'], loc='upper left')
+        plt.show()
+
+#show_history(my_history)
+plot_train_acc_loss(my_history)
 # Predict the test set results
 y_pred = classifier_NN.predict(X_test)
 # Converting the values from probabilities to true/false values with given
